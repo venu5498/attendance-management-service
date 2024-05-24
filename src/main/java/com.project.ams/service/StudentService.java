@@ -1,0 +1,28 @@
+package com.project.ams.service;
+
+import com.project.ams.entity.Student;
+import com.project.ams.jpa.StudentProfileRepository;
+import com.project.ams.response.StudentResponse;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+@Service
+public class StudentService {
+
+    @Autowired
+    StudentProfileRepository studentProfileRepository;
+
+    public StudentResponse getStudents(String sectionId) {
+        List<Student> studentList = studentProfileRepository.getStudentsBySectionId(sectionId);
+        Map<String, String> studentMap = new HashMap<>();
+        for (Student student : studentList) {
+            studentMap.put(student.getId(), student.getName());
+        }
+        return new StudentResponse(studentMap);
+    }
+
+}
