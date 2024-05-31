@@ -69,13 +69,27 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
 ## Service Level Classes:
 
-- InventoryManager
-- StoreManager
-- RestockingManager
-- ProductManager
-- StoreManager
-- RestockingManager
-- ProductManager
+- AttendanceService
+- DataPopulatorService
+- LeaveService
+- ProfileService
+- SectionService
+- SubjectService
+- StudentService
+- ProfessorService
+  
+---
+
+## DB:
+
+- SQL:
+    - Usage: Standard for managing relational databases.
+    - Consistency: Provides strong consistency with ACID properties.
+    - Type of Data: Ideal for structured data with clear relationships.
+ 
+---
+
+
 
   
 
