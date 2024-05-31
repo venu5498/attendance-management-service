@@ -17,17 +17,18 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
   ### Backend
 
-- JAVA spring boot, Spring mvc.
-- Spring boot - Spring MVC
-- Maven
-- H2 hibernate (SQL)
-- REST Framework.
-- Postman
+- JAVA (Language) 
+- Spring boot - Spring MVC (Development Framework)
+- Maven (Dependency management)
+- H2 hibernate (SQL) (DB and query language used)
+- REST Framework (Framework for API's)
+- Postman (API testing tool)
+- Git (code repository)
 
   ### FrontEnd
 
-- Thymeleaf.
-- Html, CSS, JavaScript.
+- Thymeleaf (Template engine)
+- Html, CSS, JavaScript (Languages for Frontend )
   
 
 ---
