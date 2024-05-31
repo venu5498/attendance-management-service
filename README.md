@@ -41,17 +41,17 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
 ##  Professor:
 
--login
--register
--get active sections
--get active subjects
--get students list
--mark attendance
+- login
+- register
+- get active sections
+- get active subjects
+- get students list
+- mark attendance
 
 ##  Approver
 
--takes action on leaveletter
--view attendance
+- takes action on leaveletter
+- view attendance
 
 ---
 
@@ -68,8 +68,6 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 ---
 
 ## Service Level Classes:
-
-- ## Service Level Classes:
 
 - InventoryManager
 - StoreManager
