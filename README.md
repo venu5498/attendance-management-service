@@ -11,5 +11,9 @@ We have added comments to each important class and method to ensure easy underst
 ## Entities:
 - Student
 - professor
-- 
+- Attendance
+- AttendanceRegister
+- Leave
+- Section
+- Subject
 
