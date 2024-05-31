@@ -1,7 +1,7 @@
 # Attendance-Management-Service
 This is used for managing attendance in college for students , staff etc .  
 
-###Database
+### Database
 For the time being, we are using H2 as our RDBMS. However, this can be easily replaced by PostgreSQL in a production environment.
 
 ### Code Comments
@@ -30,8 +30,8 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
   ### FrontEnd
 
--thymeleaf.
--Html, CSS, JavaScript.
+- thymeleaf.
+- Html, CSS, JavaScript.
   
 
 ---
