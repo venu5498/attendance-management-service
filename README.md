@@ -4,10 +4,6 @@ This is used for managing attendance in college for students , staff etc .
 ### Database
 For the time being, we are using H2 as our RDBMS. However, this can be easily replaced by PostgreSQL in a production environment.
 
-### Code Comments
-
-We have added comments to each important class and method to ensure easy understanding and maintainability of the codebase.
-
 ### Steps to Test
 1. **Run the Application**:Start your Spring Boot application by running the main method in your main application class. This will launch the embedded server (e.g., Tomcat) and deploy the application.
 Ensure the application starts successfully and the server is running on the configured port (default is 8080).
@@ -17,20 +13,20 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
 ---
 
-
-## Tools :
+## Technologies :
 
   ### Backend
 
-- Java spring boot, Spring mvc.
-- maven.
-- H2 hibernate.
-- sql.
-- RestApis.
+- JAVA spring boot, Spring mvc.
+- Spring boot - Spring MVC
+- Maven
+- H2 hibernate (SQL)
+- REST Framework.
+- Postman
 
   ### FrontEnd
 
-- thymeleaf.
+- Thymeleaf.
 - Html, CSS, JavaScript.
   
 
