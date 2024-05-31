@@ -1,4 +1,4 @@
-# attendance-management-service
+# Attendance-Management-Service
 This is used for managing attendance in college for students , staff etc .  
 
 ###Database
@@ -18,6 +18,25 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 ---
 
 
+## Tools :
+
+  ### Backend
+
+- Java spring boot, Spring mvc.
+- maven.
+- H2 hibernate.
+- sql.
+- RestApis.
+
+  ### FrontEnd
+
+-thymeleaf.
+-Html, CSS, JavaScript.
+  
+
+---
+
+
 ## Low Level Design approach :
 
 ### Entities:
@@ -28,6 +47,10 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 - Leave
 - Section
 - Subject
+  
+
+---
+
 
 ## Requirements/ Use case diagrams:
 
@@ -39,7 +62,7 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 - view attendance
 - apply for leave
 
-##  Professor:
+###  Professor:
 
 - login
 - register
@@ -48,14 +71,14 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 - get students list
 - mark attendance
 
-##  Approver
+###  Approver
 
 - takes action on leaveletter
 - view attendance
 
 ---
 
-## Class:
+### Class:
 
 - student
 - attendance
@@ -67,7 +90,7 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
 ---
 
-## Service Level Classes:
+###  Service Level Classes:
 
 - AttendanceService
 - DataPopulatorService
@@ -80,7 +103,7 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
   
 ---
 
-## DB:
+### DB:
 
 - SQL:
     - Usage: Standard for managing relational databases.
@@ -91,7 +114,7 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 
 ## User Activity Diagram:
 
-### login():
+### login:
 
 1. User sends request with credentials.
 2. First authenticate - if we are having the token info as part of request.
@@ -101,7 +124,7 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
         - If yes, create a token with permissions set.
           
      
-### signup():
+### signup:
 
 - Get all the details required such as name, email, password, etc.
 - Validate request and if any error, send 400.
@@ -110,52 +133,65 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
 - Else, create an entry in the DB and return 201.
 
 
-### viewProfile():   
+### viewProfile:   
 
 - View all details of that particular requester id i.e student or professor.
 - Validate id and if any error, send 400.
 - Else, get profile.
 
-### viewAttendance():
+### viewAttendance:
 
 - View attendance of that particular requester i.e student.
 - Validate id and if any error, send 400.
 - Else, get attendance.
 
-### applyLeave():
+### applyLeave:
 
 - Apply for leave by providing reason and timeperiod.
 - Send leaveletter to Hod.
 
-### activeSections():
+### activeSections:
 
 - Get active sections assigned to particular professor.
 - validate professor id and if any error, send 400.
 - Else, get active sections of that professor.
 
-### activeSubjects():
+### activeSubjects:
 
 - Get active subjects assigned to that particular professor and section.
 - validate sectionId and if any error, send 400.
 - Else, get active subjects of that section of that professor.
 
-### activeStudents():
+### activeStudents:
 
 - Get active students of that section by providing subject id.
 - Validate subjectId and if an error, send 400.
 - Else, get active students list to mark attendance.
 
-### markAttendance():
+### markAttendance:
 
 - mark attendance for students .
 - select checkboxes if student is present.
 - Else, leave empty.
 - After marking the attendance, submit the attendance.
 
-### leaveAction():
+### activeLetters:
+
+- Get active letters sent by requesters.
+- Validate approverId and if an error , send 400.
+- Else, view letters.
+
+### leaveAction:
 
 - Take action on leave letter sent by requester.
-- Validate requesterId and ApproverId
+- Validate approverId and if an error , send 400.
+- Else, take action on letter (Accept or Reject).
+
+---
+
+
+
+
 
 
 
