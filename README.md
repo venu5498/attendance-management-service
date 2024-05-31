@@ -89,6 +89,75 @@ Select the HTTP method: Choose the correct HTTP method (GET, POST, PUT, DELETE) 
  
 ---
 
+## User Activity Diagram:
+
+### login():
+
+1. User sends request with credentials.
+2. First authenticate - if we are having the token info as part of request.
+    - If no, return 401 saying unauthorized.
+    - If yes, check if the user exists.
+        - If no, return error saying invalid credentials.
+        - If yes, create a token with permissions set.
+          
+     
+### signup():
+
+- Get all the details required such as name, email, password, etc.
+- Validate request and if any error, send 400.
+- Else, check for password validation.
+    - If not okay, send 400.
+- Else, create an entry in the DB and return 201.
+
+
+### viewProfile():   
+
+- View all details of that particular requester id i.e student or professor.
+- Validate id and if any error, send 400.
+- Else, get profile.
+
+### viewAttendance():
+
+- View attendance of that particular requester i.e student.
+- Validate id and if any error, send 400.
+- Else, get attendance.
+
+### applyLeave():
+
+- Apply for leave by providing reason and timeperiod.
+- Send leaveletter to Hod.
+
+### activeSections():
+
+- Get active sections assigned to particular professor.
+- validate professor id and if any error, send 400.
+- Else, get active sections of that professor.
+
+### activeSubjects():
+
+- Get active subjects assigned to that particular professor and section.
+- validate sectionId and if any error, send 400.
+- Else, get active subjects of that section of that professor.
+
+### activeStudents():
+
+- Get active students of that section by providing subject id.
+- Validate subjectId and if an error, send 400.
+- Else, get active students list to mark attendance.
+
+### markAttendance():
+
+- mark attendance for students .
+- select checkboxes if student is present.
+- Else, leave empty.
+- After marking the attendance, submit the attendance.
+
+### leaveAction():
+
+- Take action on leave letter sent by requester.
+- Validate requesterId and ApproverId
+
+
 
 
   
