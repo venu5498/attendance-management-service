@@ -15,10 +15,11 @@ public class SectionService {
     @Autowired
     SectionRepository sectionRepository;
 
-    public SectionResponse getSections(String professorId) {
+    public List<Section> getSections(String professorId) {
         List<Section> sections = sectionRepository.findSectionsByProfessorId(professorId);
         List<String> sectionIds = new ArrayList<>();
         sections.forEach(section -> sectionIds.add(section.getId()));
-        return new SectionResponse(sectionIds);
+        System.out.println("For professorId: " + professorId + " sections are: " + sections.toString());
+        return sections;
     }
 }

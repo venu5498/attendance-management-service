@@ -1,10 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Attendance Management System</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <script src="/js/main.js"></script>
 </head>
 <body>
-  <h1>Hello CVR College Of Engineering</h1>
+<header>
+    <h1>Welcome to Attendance Management System</h1>
+</header>
+
+<button onclick="showForm('createStudentForm');">Create Student</button>
+<button onclick="showForm('getStudentForm');">Get Student</button>
+<button onclick="enterAsProfessor();">Enter as Professor</button>
+<button onclick="enterAsStudent();">Enter as Student</button>
+
+<div id="studentOptions" style="display: none;">
+    <button onclick="getAttendance();">Get Attendance</button>
+    <button onclick="leaveForm();">Apply for Leave</button>
+    <button onclick="getLeaves();">Get Leaves</button>
+</div>
+
+<div id="createStudentForm" style="display: none;" th:include="createStudentForm.html"></div>
+<div id="getStudentForm" style="display: none;" th:include="getStudentForm.html"></div>
+<div id="professorSectionList" style="display: none;"></div>
+<div id="subjectList" style="display: none;"></div>
+<div id="studentAttendance" style="display: none;"></div>
+<div id="studentList" style="display: none;"></div>
+<div id="studentIdDisplay" style="position: absolute; top: 0; right: 0;"></div>
+<div id="studentDetails" style="display: none;"></div>
+
+<footer>
+    <p>Copyright &copy; 2024. All rights reserved.</p>
+</footer>
 </body>
 </html>

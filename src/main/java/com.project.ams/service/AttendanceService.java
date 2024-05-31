@@ -35,7 +35,7 @@ public class AttendanceService {
     }
 
     public MarkAttendanceResponse markAttendance(MarkAttendanceRequest markAttendanceRequest) {
-
+        System.out.println("markAttendanceRequest: "+markAttendanceRequest);
         Map<String, AttendanceStatus> studentsAttendance = markAttendanceRequest.getAttendanceStatusMap();
 
         for (Map.Entry<String, AttendanceStatus> studentAttendance : studentsAttendance.entrySet()) {
@@ -85,16 +85,19 @@ public class AttendanceService {
 
     public StudentAttendanceResponse getStudentAttendance(String studentId) {
         StudentAttendanceResponse studentAttendanceResponse = new StudentAttendanceResponse();
+        System.out.println("For studentID: "+studentId);
         Optional<Attendance> attendance = attendanceRepository.getAttendanceByStudentId(studentId);
+        System.out.println("attendance"+attendance);
         if (attendance.isEmpty()) {
             return studentAttendanceResponse;
         } else {
             Attendance studentAttendance = attendance.get();
+            System.out.println("studentAttendance"+studentAttendance);
             studentAttendanceResponse.setStudentId(studentId);
             studentAttendanceResponse.setPercentage(studentAttendance.getPercentage());
             studentAttendanceResponse.setAttendedClasses(studentAttendance.getAttendedClasses());
             studentAttendanceResponse.setTotalClasses(studentAttendance.getTotalClasses());
-            studentAttendance.setSubjectId(studentAttendance.getSubjectId());
+            studentAttendanceResponse.setSubjectId(studentAttendance.getSubjectId());
             return studentAttendanceResponse;
         }
     }

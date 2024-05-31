@@ -1,0 +1,9 @@
+<!-- Form to create a student -->
+<form action="#" th:action="@{/student}" th:object="${student}" method="post">
+    <h2>Create Student</h2>
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" th:field="*{name}" name="name"><br>
+    <label for="sectionId">Section ID:</label><br>
+    <input type="text" id="sectionId" th:field="*{sectionId}" name="sectionId"><br>
+    <input type="submit" value="Create Student">
+</form>

@@ -14,11 +14,12 @@ public class SubjectService {
     @Autowired
     SubjectRepository subjectRepository;
 
-    public SubjectResponse getSubject(String sectionId) {
+    public List<Subject> getSubject(String sectionId) {
         List<Subject> subjects = subjectRepository.findSubjectsBySectionId(String.valueOf(sectionId));
-        List<String> subjectIds = new ArrayList<>();
-        subjects.forEach(subject -> subjectIds.add(subject.getId()));
-        return new SubjectResponse(subjectIds);
+        System.out.println("For sectionId: " + sectionId + " subjects are: " + subjects.toString());
+
+        return subjects;
+
     }
 }
 

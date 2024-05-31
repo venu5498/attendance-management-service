@@ -1,0 +1,259 @@
+/* General Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-right: 1rem;
+    border-radius: 0.25rem;
+}
+
+button:hover {
+    background-color: #3e8e41;
+}
+
+#studentOptions {
+    display: none;
+}
+
+#createStudentForm,
+#getStudentForm,
+#professorSectionList,
+#subjectList,
+#studentAttendance,
+#studentList,
+#studentIdDisplay {
+    display: none;
+}
+
+footer {
+    margin-top: auto;
+    background-color: #333;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Form Styles */
+form {
+    max-width: 30rem;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+}
+
+input[type="submit"]:hover {
+    background-color: #3e8e41;
+}
+
+/* Display Styles */
+#studentAttendance,
+#studentList {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    margin-top: 1rem;
+}
+
+#attendanceData {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 600px) {
+    #studentOptions {
+        display: block;
+    }
+
+    #studentAttendance,
+    #studentList {
+        grid-template-columns: 1fr;
+    }
+}
+
+.section {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.section-details {
+    font-weight: bold;
+    color: #333;
+}
+
+.get-subjects-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.get-subjects-btn:hover {
+    background-color: #3e8e41;
+}
+
+.subject {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.subject-details {
+    font-weight: bold;
+    color: #333;
+}
+
+.get-students-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.get-students-btn:hover {
+    background-color: #3e8e41;
+}
+
+.student {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.student-details {
+    font-weight: bold;
+    color: #333;
+}
+
+.student-checkbox {
+    margin-right: 0.5rem;
+}
+
+.student-label {
+    color: #666;
+}
+
+.submit-attendance-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-top: 0.5rem;
+    border-radius: 0.25rem;
+}
+
+.submit-attendance-btn:hover {
+    background-color: #3e8e41;
+}
+
+.attendance-date {
+    display: block;
+    margin-bottom: 1rem;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+}
+
+.success-message {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.student-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.student-table th, .student-table td {
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.student-table th {
+    background-color: #f2f2f2;
+}
+
+div {
+    border: 1px solid black;
+}
+
+.attendance-data {
+    border: 1px solid #ccc;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.attendance-percentage,
+.attendance-total-classes,
+.attendance-attended-classes,
+.attendance-subject-id {
+    font-weight: bold;
+    color: #333;
+}
+
+#studentDetails {
+    width: 50%;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    background-color: #f8f8f8;
+}

@@ -16,13 +16,14 @@ public class StudentService {
     @Autowired
     StudentProfileRepository studentProfileRepository;
 
-    public StudentResponse getStudents(String sectionId) {
+    public List<Student>  getStudents(String sectionId) {
         List<Student> studentList = studentProfileRepository.getStudentsBySectionId(sectionId);
         Map<String, String> studentMap = new HashMap<>();
+        System.out.println("Student List: "+studentList);
         for (Student student : studentList) {
             studentMap.put(student.getId(), student.getName());
         }
-        return new StudentResponse(studentMap);
+        return studentList;
     }
 
 }

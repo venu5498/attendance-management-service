@@ -21,6 +21,7 @@ public class ProfileService {
 
     public StudentProfileResponse getStudentProfile(String studentId) {
         Student student = studentProfileRepository.findStudentProfileByStudentId(studentId);
+        System.out.println("Student found with ID: " + studentId +" is "+student);
         if (student == null) {
             return new StudentProfileResponse();
         }
@@ -42,6 +43,13 @@ public class ProfileService {
         student = studentProfileRepository.save(student);
 
         return createStudentProfileResponse(student);
+    }
+
+    public Student createStudent(Student student) {
+
+        student = studentProfileRepository.save(student);
+        System.out.println("Student created with ID: " + student.getId());
+        return  student;
     }
 
 

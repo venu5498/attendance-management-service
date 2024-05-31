@@ -1,10 +1,12 @@
 package com.project.ams.request;
 
 import com.project.ams.enums.AttendanceStatus;
+import lombok.ToString;
 
 import java.time.LocalDate;
 import java.util.Map;
 
+@ToString
 public class MarkAttendanceRequest {
     private LocalDate dateOfAttendance;
     private String sectionId;

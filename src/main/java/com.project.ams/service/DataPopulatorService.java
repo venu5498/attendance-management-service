@@ -8,6 +8,7 @@ import com.project.ams.jpa.ProfessorProfileRepository;
 import com.project.ams.jpa.SectionRepository;
 import com.project.ams.jpa.StudentProfileRepository;
 import com.project.ams.jpa.SubjectRepository;
+import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -27,6 +28,14 @@ public class DataPopulatorService {
 
     @Autowired
     StudentProfileRepository studentProfileRepository;
+
+    @PostConstruct
+    public void init() {
+        professorData();
+        studentData();
+        sectionData();
+        subjectData();
+    }
 
     public void populateDummyData() {
         // Create Dummy professors
@@ -164,6 +173,7 @@ public class DataPopulatorService {
         s1.setMobileNumber("9876543900");
         s1.setFather_name("Anand");
         s1.setMother_name("Jyothi");
+        s1.setSectionId("IT34");
         s1 = studentProfileRepository.save(s1);
         studentList.add(s1.getId());
 
@@ -179,6 +189,7 @@ public class DataPopulatorService {
         s2.setMobileNumber("9876567676");
         s2.setFather_name("Sridhar");
         s2.setMother_name("Kavitha");
+        s2.setSectionId("IT34");
         s2 = studentProfileRepository.save(s2);
         studentList.add(s2.getId());
 
@@ -193,6 +204,7 @@ public class DataPopulatorService {
         s3.setMobileNumber("9392858496");
         s3.setFather_name("Satyanarayana");
         s3.setMother_name("Geetha");
+        s3.setSectionId("IT34");
         s3 = studentProfileRepository.save(s3);
         studentList.add(s3.getId());
 
@@ -207,6 +219,7 @@ public class DataPopulatorService {
         s4.setMobileNumber("9392858456");
         s4.setFather_name("Rajender");
         s4.setMother_name("Usha");
+        s4.setSectionId("IT34");
         s4 = studentProfileRepository.save(s4);
         studentList.add(s4.getId());
 
@@ -221,6 +234,7 @@ public class DataPopulatorService {
         s5.setMobileNumber("9562858456");
         s5.setFather_name("Hanmanth Rao");
         s5.setMother_name("Anitha");
+        s5.setSectionId("IT34");
         s5 = studentProfileRepository.save(s5);
         studentList.add(s5.getId());
 
@@ -233,35 +247,35 @@ public class DataPopulatorService {
         Section sec1 = new Section();
         sec1.setId("IT12");
         sec1.setName("IT-A");
-        sec1.setProfessor_id("P56789012");
+        sec1.setProfessorId("P56789012");
         sec1 = sectionRepository.save(sec1);
         sectionsList.add(sec1.getId());
 
         Section sec2 = new Section();
         sec2.setId("IT23");
         sec2.setName("IT-B");
-        sec2.setProfessor_id("P34567890");
+        sec2.setProfessorId("P34567890");
         sec2 = sectionRepository.save(sec2);
         sectionsList.add(sec2.getId());
 
         Section sec3 = new Section();
         sec3.setId("IT34");
         sec3.setName("IT-C");
-        sec3.setProfessor_id("P12345678");
+        sec3.setProfessorId("P12345678");
         sec3 = sectionRepository.save(sec3);
         sectionsList.add(sec3.getId());
 
         Section sec4 = new Section();
         sec4.setId("IT45");
         sec4.setName("IT-D");
-        sec4.setProfessor_id("P23456789");
+        sec4.setProfessorId("P23456789");
         sec4 = sectionRepository.save(sec4);
         sectionsList.add(sec4.getId());
 
         Section sec5 = new Section();
         sec5.setId("IT56");
         sec5.setName("IT-E");
-        sec5.setProfessor_id("P45678901");
+        sec5.setProfessorId("P45678901");
         sec5 = sectionRepository.save(sec5);
         sectionsList.add(sec5.getId());
 
@@ -275,20 +289,20 @@ public class DataPopulatorService {
         Subject sub1 = new Subject();
         sub1.setId("DSA123");
         sub1.setName("DSA");
-        sub1.setSection_id("IT-A");
+        sub1.setSectionId("IT12");
         sub1 = subjectRepository.save(sub1);
         subjectsList.add(sub1.getId());
 
         Subject sub2 = new Subject();
         sub2.setId("Maths123");
         sub2.setName("Maths");
-        sub2.setSection_id("IT-B");
+        sub2.setSectionId("IT23");
         sub2 = subjectRepository.save(sub2);
         subjectsList.add(sub2.getId());
 
-
-        createSubjectData("Maths123", "Python", "IT-C", subjectsList);
-        createSubjectData("Science123", "ComputerOrganization", "IT-D", subjectsList);
+        createSubjectData("Java123", "Java", "IT34", subjectsList);
+        createSubjectData("Python123", "Python", "IT45", subjectsList);
+        createSubjectData("Science123", "ComputerOrganization", "IT56", subjectsList);
 
 
         System.out.println("Created Dummy subjectsList : " + subjectsList);
@@ -300,7 +314,7 @@ public class DataPopulatorService {
         Subject sub = new Subject();
         sub.setId(id);
         sub.setName(name);
-        sub.setSection_id(sectionId);
+        sub.setSectionId(sectionId);
         sub = subjectRepository.save(sub);
         subjectsList.add(sub.getId());
 

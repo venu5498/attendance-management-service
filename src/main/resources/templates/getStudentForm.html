@@ -1,0 +1,34 @@
+<!-- Form to fetch a student by ID -->
+<form action="#" method="get">
+    <h2>Get Student</h2>
+    <label for="studentId">Student ID:</label><br>
+    <input type="text" id="studentId" ><br>
+    <input type="submit" value="Get Student">
+</form>
+
+<script>
+    document.getElementById('getStudentForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent the form from submitting normally
+
+        var studentId = document.getElementById('studentId').value; // Get the input value
+        console.log(studentId);
+        // Make a GET request to the ProfileController endpoint
+        fetch('/student/' + studentId, {
+            method: 'GET',
+        })
+            .then(response => response.text())
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('studentDetails').style.display = 'block';
+
+                // Display the student data
+                // This will depend on how you want to display the data on your page
+                document.getElementById('studentDetails').innerHTML = data;
+
+            })
+            .catch((error) => {
+
+                console.error('Error: ', error);
+            });
+    });
+</script>
